@@ -1,0 +1,1 @@
+/home/souvik1997/dwm/config.h
