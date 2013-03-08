@@ -62,7 +62,6 @@ static const Rule rules[] = {
 	{ "Docky", NULL, "", ~0, False, -1, False},
 	{ "Tint2", NULL, NULL, ~0, False, -1, False},
 	{ "trayer", NULL, NULL, ~0, False, -1, False},
-	{ "Firefox", NULL, NULL, 1 << 8, False, -1, False},
 };
 
 /* layout(s) */
@@ -91,7 +90,7 @@ static const Layout layouts[] = {
 
 /* commands */
 static const char *dmenucmd[] = { "dmenu_run", "-fn", font, "-nb", normbgcolor, "-nf", normfgcolor, "-sb", selbgcolor, "-sf", selfgcolor, NULL };
-static const char *termcmd[]  = { "urxvt", NULL };
+static const char *termcmd[]  = { "/home/souvik1997/bin/urxvt-launcher.sh", NULL };
 static const char *volup[]    ={"/home/souvik1997/bin/volup.sh","","",NULL};
 static const char *voldwn[]    = {"/home/souvik1997/bin/voldwn.sh","","",NULL};
 static const char *volmute[]    = {"volmute", NULL};
@@ -108,6 +107,7 @@ static const char *screenshotrect[]={"/home/souvik1997/bin/screenshot.sh","recta
 static const char *dimscreen[]={"/home/souvik1997/bin/dimscreen.sh","","",NULL};
 static const char *dimscreen2[]={"/home/souvik1997/bin/dimscreen2.sh","","",NULL};
 static const char *dimscreen3[]={"/home/souvik1997/bin/dimscreen3.sh","","",NULL};
+static const char *quitFunc[]={"/usr/bin/systemctl","--user","exit",NULL};
 
 static Key keys[] = {
     /* modifier                     key        function        argument */
@@ -153,8 +153,8 @@ dmenucmd } },
     {MODKEY,			XK_e,      spawn,          {.v = launchGedit} },
     {MODKEY|ShiftMask,			XK_z,      spawn,          {.v = launchFM} },
     {0,			0x1008ff12,      spawn,          {.v = mute} },
-    {MODKEY,			0xff61,      spawn,          {.v = screenshotrect} },
-    { MODKEY|ShiftMask,             XK_q,      quit,           {0} }
+    {0,			0xff61,      spawn,          {.v = screenshot} },
+    { MODKEY|ShiftMask,             XK_q,      quitFunc,           {0} }
 };
 
 /* button definitions */
