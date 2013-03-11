@@ -98,7 +98,7 @@ static const char *alsamixer[] = { "xterm-centered.sh", "-title", "alsamixer", "
 static const char *wifimenu[] = { "xterm-centered.sh", "-title", "wifi-menu", "-e", "/home/souvik1997/bin/wifi-menu-wrapper.sh", NULL };
 
 static const char *launchChromium[] = {"chromium","","",NULL};
-static const char *launchGedit[] = {"subl",NULL};
+static const char *launchGedit[] = {"gvim",NULL};
 static const char *launchFM[]={"pcmanfm","","",NULL};
 static const char *logout[]={"/home/souvik1997/bin/logout-dwm.sh","","",NULL};
 static const char *mute[]={"/home/souvik1997/bin/mute.sh","","",NULL};
