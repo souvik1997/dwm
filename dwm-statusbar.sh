@@ -21,11 +21,11 @@ bat(){
         ac=`acpi -V | awk 'NR==1 {print +$4}'`
         onl=`acpi -V | grep "on-line" `
         if [ -z "$onl" ] && [ "$ac" -gt "15" ]; then
-                echo -e "BAT \x02$ac%"
+                echo -e "BAT $ac%"
         elif [ -z "$onl" ] && [ "$ac" -le "15" ]; then
-                echo -e "BAT \x02$ac%"
+                echo -e "BAT $ac%"
         else
-                echo -e "AC \x02$ac%"
+                echo -e "AC $ac%"
         fi
 }
 mem(){
@@ -60,10 +60,10 @@ netstats_up()
 	echo -e `ifconfig wlan0 | awk '/TX packets/{print $6 $7}' | sed -e 's/[(|)]//g'`
 }
 separator(){
-	echo -e "\x01<"
+	echo -e "\x13<"
 }	
 combine(){
-	echo -e "\x03\u00C7 `uname -r` `separator`\x02 \u00C3 `bat` `separator` \x06\u00D0 `netstats_down` \u00d1 `netstats_up` `separator` \x07\u00DE `mem` `separator` \x0E\u00C5 `hdd` `separator` \x11\u00D4 `volume``mpd` `separator` \x09`coretemp` `separator` \x12`dte`"
+	echo -e "\x03\u00C7 `uname -r` `separator`\x06 \u00C3 `bat` `separator` \x0B\u00D0 `netstats_down` \u00d1 `netstats_up` `separator` \x07\u00DE `mem` `separator` \x0E\u00C5 `hdd` `separator` \x11\u00D4 `volume``mpd` `separator` \x09`coretemp` `separator` \x12`dte`"
 }
 if [ ! -n "$1" ] #testing purposes
 then
