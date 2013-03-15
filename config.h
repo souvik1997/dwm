@@ -44,24 +44,25 @@ static const unsigned int borderpx  = 1;        /* border pixel of windows */
 static const unsigned int snap      = 32;       /* snap pixel */
 static const Bool showbar           = True;     /* False means no bar */
 static const Bool topbar            = True;     /* False means bottom bar */
+static const unsigned int shade = 70; 
 //int marginbottom = 20;
 int marginbottom = 0;
 /* tagging */
 static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
 
 static const Rule rules[] = {
-	/* class instance title tagsmask isfloating monitor dontshow*/
-	{ "Gimp", NULL, NULL, 0, True, -1, False},
+	/* class instance title tagsmask isfloating monitor opacity*/
+	{ "Gimp", NULL, NULL, 0, True, -1, -1},
         //{ "XTerm", "xterm",   "alsamixer",   NULL,   True,      -1, False}, /* scratchpad in its own tag (6th) */
-        { "URxvt", "wifi-menu",   "Wifi-menu",   NULL,   True,      -1, False}, /* scratchpad in its own tag (6th) */
-        { "Qalculate", NULL, NULL, NULL, True, -1, False},
-        { "XTerm", NULL, NULL, NULL, True, -1, False},
-        { "Gnuplot", NULL, NULL, NULL, True, -1, False},
-	{ "Xfce4-panel", NULL, "", ~0, False, -1, False},
-	{ "lxpanel", NULL, "", ~0, True, -1, True},
-	{ "Docky", NULL, "", ~0, False, -1, False},
-	{ "Tint2", NULL, NULL, ~0, False, -1, False},
-	{ "trayer", NULL, NULL, ~0, False, -1, False},
+        { "URxvt", "wifi-menu",   "Wifi-menu",   NULL,   True,      -1, -1}, /* scratchpad in its own tag (6th) */
+        { "Qalculate", NULL, NULL, NULL, True, -1, -1},
+        { "XTerm", NULL, NULL, NULL, True, -1, -1},
+        { "Gnuplot", NULL, NULL, NULL, True, -1, -1},
+	{ "Xfce4-panel", NULL, "", ~0, False, -1, -1},
+	{ "lxpanel", NULL, "", ~0, True, -1, -1},
+	{ "Docky", NULL, "", ~0, False, -1, -1},
+	{ "Tint2", NULL, NULL, ~0, False, -1, -1},
+	{ "trayer", NULL, NULL, ~0, False, -1, -1},
 };
 
 /* layout(s) */
