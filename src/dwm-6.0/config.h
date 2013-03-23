@@ -7,33 +7,51 @@ static const char font[]  = "-*-terminus2-*-*-*-*-*-*-*-*-*-*-*-*";
 
 //static const char font[] = "-*-terminus2-medium-r-*-*-12-*-*-*-*-*-*-*";
 
-#define NUMCOLORS 21
+#define NUMCOLORS 39
 static const char colors[NUMCOLORS][ColLast][21] = {
-    /* border     fg         bg */
-    { "#1A1A1A", "#808080", "#020202" },  /* 01 - normal */
-    { "#4C4C4C", "#B3B3B3", "#020202" },  /* 02 - selected */
-    { "#B3354C", "#B3354C", "#020202" },  /* 03 - urgent */
+	/* border     fg         bg */
 
-    { "#1A1A1A", "#1A1A1A", "#020202" },  /* 04 - black */
-    { "#802635", "#802635", "#020202" },  /* 05 - red */
-    { "#608040", "#608040", "#020202" },  /* 06 - green */
-    { "#877C43", "#877C43", "#020202" },  /* 07 - yellow */
-    { "#1C678C", "#1C678C", "#020202" },  /* 08 - blue */
-    { "#684D80", "#684D80", "#020202" },  /* 09 - magenta */
-    { "#000000", "#000000", "#000000" },  /* unusable */
-    { "#337373", "#337373", "#020202" },  /* 0B - cyan */
-    { "#808080", "#808080", "#020202" },  /* 0C - light gray */
-    { "#4C4C4C", "#4C4C4C", "#020202" },  /* 0D - gray */
-    { "#B3354C", "#B3354C", "#020202" },  /* 0E - light red */
-    { "#4BA65A", "#4BA65A", "#020202" },  /* 0F - light green */
-    { "#BF9F5F", "#BF9F5F", "#020202" },  /* 10 - light yellow */
-    { "#3995BF", "#3995BF", "#020202" },  /* 11 - light blue */
-    { "#A64286", "#A64286", "#020202" },  /* 12 - light magenta */
-    { "#6C98A6", "#6C98A6", "#020202" },  /* 13 - light cyan */
-    { "#B3B3B3", "#B3B3B3", "#020202" },  /* 14 - white */
-
-    { "#802635", "#BF9F5F", "#802635" },  /* 15 - warning */
+	{"#1D1D1D","#1C678C","#030303"}, //FG:SeaBlue BG:Black ID:1 (1)
+	{"#1D1D1D","#FDFDFD","#030303"}, //FG:White BG:Black ID:2 (2)
+	{"#1D1D1D","#1D1D1D","#1C678C"}, //FG:Gray BG:SeaBlue ID:3 (3)
+	{"#1D1D1D","#1D1D1D","#EAC658"}, //FG:Gray BG:SolarizedYellow ID:4 (4)
+	{"#1D1D1D","#1D1D1D","#E77636"}, //FG:Gray BG:SoftOrange ID:5 (5)
+	{"#1D1D1D","#1D1D1D","#CE2319"}, //FG:Gray BG:SoftRed ID:6 (6)
+	{"#B3354C","#B3354C","#1D1D1D"}, //FG:Magenta BG:Gray ID:7 (7)
+	{"#B3354C","#B3354C","#B3354C"}, //FG:Magenta BG:Magenta ID:8 (8)
+	{"#B3354C","#B3354C","#1C678C"}, //FG:Magenta BG:SeaBlue ID:9 (9)
+	{"#B3354C","#B3354C","#1C678C"}, //Unusable
+	{"#B3354C","#B3354C","#EAC658"}, //FG:Magenta BG:SolarizedYellow ID:11 (b)
+	{"#B3354C","#B3354C","#E77636"}, //FG:Magenta BG:SoftOrange ID:12 (c)
+	{"#B3354C","#B3354C","#CE2319"}, //FG:Magenta BG:SoftRed ID:13 (d)
+	{"#1C678C","#1C678C","#1D1D1D"}, //FG:SeaBlue BG:Gray ID:14 (e)
+	{"#1C678C","#1C678C","#B3354C"}, //FG:SeaBlue BG:Magenta ID:15 (f)
+	{"#1C678C","#1C678C","#1C678C"}, //FG:SeaBlue BG:SeaBlue ID:16 (10)
+	{"#1C678C","#1C678C","#EAC658"}, //FG:SeaBlue BG:SolarizedYellow ID:17 (11)
+	{"#1C678C","#1C678C","#E77636"}, //FG:SeaBlue BG:SoftOrange ID:18 (12)
+	{"#1C678C","#1C678C","#CE2319"}, //FG:SeaBlue BG:SoftRed ID:19 (13)
+	{"#EAC658","#EAC658","#1D1D1D"}, //FG:SolarizedYellow BG:Gray ID:20 (14)
+	{"#EAC658","#EAC658","#B3354C"}, //FG:SolarizedYellow BG:Magenta ID:21 (15)
+	{"#EAC658","#EAC658","#1C678C"}, //FG:SolarizedYellow BG:SeaBlue ID:22 (16)
+	{"#EAC658","#EAC658","#EAC658"}, //FG:SolarizedYellow BG:SolarizedYellow ID:23 (17)
+	{"#EAC658","#EAC658","#E77636"}, //FG:SolarizedYellow BG:SoftOrange ID:24 (18)
+	{"#EAC658","#EAC658","#CE2319"}, //FG:SolarizedYellow BG:SoftRed ID:25 (19)
+	{"#E77636","#E77636","#1D1D1D"}, //FG:SoftOrange BG:Gray ID:26 (1a)
+	{"#E77636","#E77636","#B3354C"}, //FG:SoftOrange BG:Magenta ID:27 (1b)
+	{"#E77636","#E77636","#1C678C"}, //FG:SoftOrange BG:SeaBlue ID:28 (1c)
+	{"#E77636","#E77636","#EAC658"}, //FG:SoftOrange BG:SolarizedYellow ID:29 (1d)
+	{"#E77636","#E77636","#E77636"}, //FG:SoftOrange BG:SoftOrange ID:30 (1e)
+	{"#E77636","#E77636","#CE2319"}, //FG:SoftOrange BG:SoftRed ID:31 (1f)
+	{"#CE2319","#CE2319","#CE2319"}, //Unusable
+	{"#CE2319","#CE2319","#1D1D1D"}, //FG:SoftRed BG:Gray ID:33 (21)
+	{"#CE2319","#CE2319","#B3354C"}, //FG:SoftRed BG:Magenta ID:34 (22)
+	{"#CE2319","#CE2319","#1C678C"}, //FG:SoftRed BG:SeaBlue ID:35 (23)
+	{"#CE2319","#CE2319","#EAC658"}, //FG:SoftRed BG:SolarizedYellow ID:36 (24)
+	{"#CE2319","#CE2319","#E77636"}, //FG:SoftRed BG:SoftOrange ID:37 (25)
+	{"#CE2319","#CE2319","#CE2319"}, //FG:SoftRed BG:SoftRed ID:38 (26)
+	{"#030303","#030303","#1C678C"}, //FG:Black BG:SeaBlue ID:39 (27)
 };
+
 
 static const char normbordercolor[] = "#444444";
 static const char normbgcolor[]     = "#222222";
@@ -156,7 +174,7 @@ dmenucmd } },
     TAGKEYS(                        XK_7,                      6)
     TAGKEYS(                        XK_8,                      7)
     TAGKEYS(                        XK_9,                      8)
-    {SUPERKEY,			XK_x,      spawn,	   {.v = launchChromium} },
+    {MODKEY,			XK_a,      spawn,	   {.v = launchChromium} },
     {MODKEY,			XK_e,      spawn,          {.v = launchGedit} },
     {MODKEY|ShiftMask,			XK_z,      spawn,          {.v = launchFM} },
     {0,			0x1008ff12,      spawn,          {.v = mute} },
